@@ -22,3 +22,38 @@ function updateClock() {
 }
 
 setInterval(updateClock, 1000);
+
+// https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/
+document.addEventListener('DOMContentLoaded', () => {
+	/** init gtm after 1500 seconds - this could be adjusted */
+	setTimeout(initGTM, 1500);
+});
+
+function initGTMOnEvent (event) {
+	initGTM();
+	event.currentTarget.removeEventListener(event.type, initGTMOnEvent); // remove the event listener that got triggered
+}
+
+function initGTM () {
+	if (window.gtmDidInit) {
+		return false;
+	}
+	window.gtmDidInit = true; // flag to ensure script does not get added to DOM more than once.
+	const script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.async = true;
+	script.onload = () => { dataLayer.push({ event: 'gtm.js', 'gtm.start': (new Date()).getTime(), 'gtm.uniqueEventId': 0 }); } // this part ensures PageViews is always tracked
+	script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-116705068-1';
+
+	document.head.appendChild(script);
+}
+
+function addGTMAttributes() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-116705068-1');    
+}
+
+window.onload = addGTMAttributes();
