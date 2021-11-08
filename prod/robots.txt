@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: / 
+
+Sitemap: http://www.camelcaseconverter.nhely.hu/sitemap.xml
