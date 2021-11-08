@@ -25,8 +25,8 @@ setInterval(updateClock, 1000);
 
 // https://constantsolutions.dk/2020/06/delay-loading-of-google-analytics-google-tag-manager-script-for-better-pagespeed-score-and-initial-load/
 document.addEventListener('DOMContentLoaded', () => {
-	/** init gtm after 1500 seconds - this could be adjusted */
-	setTimeout(initGTM, 1500);
+	/** init gtm after 3500 seconds - this could be adjusted */
+	setTimeout(initGTM, 3500);
 });
 
 function initGTMOnEvent (event) {

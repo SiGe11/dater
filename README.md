@@ -1,1 +1,1 @@
-Simple website that count's down to a specific, hard coded, date.
+A simple website that count's down to a specific, hard-coded, date with unnecessary optimizations.
