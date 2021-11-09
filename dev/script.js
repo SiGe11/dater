@@ -28,6 +28,8 @@ window.onload = document.addEventListener('DOMContentLoaded', () => {
 	/** init gtm after 3500 seconds - this could be adjusted */
 	setTimeout(initGTM, 3500);
 });
+window.onload = document.addEventListener('mousemove', initGTMOnEvent);
+window.onload = document.addEventListener('touchstart', initGTMOnEvent);
 
 function initGTMOnEvent (event) {
 	initGTM();
