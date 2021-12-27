@@ -1,5 +1,5 @@
 // Assure functionality in case of the PHP call isn't working. Also unnecessary performance optimization. 
-var endDateTime = new Date(2022, 3, 10, 0, 0, 0, 0);
+var endDateTime = new Date(2022, 3, 3, 0, 0, 0, 0);
 var endStamp = endDateTime.getTime();
 
 // Just to test php calls
