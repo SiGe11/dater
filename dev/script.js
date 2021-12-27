@@ -1,7 +1,14 @@
-// https://stackoverflow.com/a/26050234/7445342
-var endDateTime = new Date('Apr 03 2022 00:00:00 GMT+0200');
-
+// Assure functionality in case of the PHP call isn't working. Also unnecessary performance optimization. 
+var endDateTime = new Date(2022, 3, 10, 0, 0, 0, 0);
 var endStamp = endDateTime.getTime();
+
+// Just to test php calls
+var req = new XMLHttpRequest(); 
+    req.onload = function() {
+    endStamp =  this.responseText; 
+ };
+req.open("get", "targetdate.php", true); 
+req.send();
 
 var newDate = new Date();
 var newStamp = newDate.getTime();
