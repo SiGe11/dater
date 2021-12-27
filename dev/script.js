@@ -9,6 +9,7 @@ var req = new XMLHttpRequest();
  };
 req.open("get", "targetdate.php", true); 
 req.send();
+// Yes, all this end date could be a simple hard coded timestampe too...
 
 var newDate = new Date();
 var newStamp = newDate.getTime();
