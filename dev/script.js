@@ -29,4 +29,7 @@ function updateClock() {
     document.getElementById("time-until").innerHTML = d + " nap, " + h + " óra, " + m + " perc, " + s + " másodperc";
 }
 
-setInterval(updateClock, 1000);
+window.addEventListener("DOMContentLoaded", function() {
+    updateClock();
+    setInterval(updateClock, 1000);
+}, false);
